@@ -1,0 +1,38 @@
+<div class="max-w-2xl mx-auto mt-10 px-4">
+<h2 class="text-2xl font-bold mb-6 text-gray-800">ToDo一覧</h2>
+
+<div class="bg-white border border-gray-200 rounded-lg shadow-sm p-4 mb-6">
+  <%= form_with model: @todo do |f| %>
+    <div class="mb-3">
+      <%= f.text_area :title,
+        rows: 2,
+        placeholder: "タイトルを入力",
+        class: "w-full border border-gray-300 rounded px-3 py-2"
+      %>
+    </div>
+    <div>
+      <%= f.text_area :body,
+        rows: 3,
+        placeholder: "詳細を入力",
+        class: "w-full border border-gray-300 rounded px-3 py-2"
+      %>
+    </div>
+    <div class="text-right mb-3">
+      <%= f.submit "登録",
+        class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      %>
+  <% end %>
+</div>
+
+<div class="space-y-3">
+  <% @todos.each do |todo| %>
+   <%= link_to todo, class: "block" do %>
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm px-4 py-3">
+      <p class="text-gray-800 text-lg">
+        <%= todo.title %>
+      </p>
+    </div>
+   <% end %>
+  <% end %>
+</div>
+</div>

@@ -8,6 +8,15 @@ class TodosController < ApplicationController
         end
     end
 
+    def index
+        @todo = Todo.new
+        @todos = Todo.all
+    end
+
+    def show
+        @todo = Todo.find(params[:id])
+    end
+
     private
 
     def todo_params

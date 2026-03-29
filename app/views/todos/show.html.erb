@@ -1,0 +1,24 @@
+<div class="max-w-2xl mx-auto mt-10 px-4">
+
+  <!-- 戻るリンク -->
+  <div class="mb-4">
+    <%= link_to "← 一覧に戻る", root_path,
+      class: "text-blue-500 hover:underline" %>
+  </div>
+
+  <!-- カード -->
+  <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
+
+    <!-- タイトル -->
+    <h1 class="text-2xl font-bold text-gray-800 mb-4">
+      <%= @todo.title %>
+    </h1>
+
+    <!-- 詳細 -->
+    <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">
+      <%= @todo.body %>
+    </p>
+
+  </div>
+
+</div>

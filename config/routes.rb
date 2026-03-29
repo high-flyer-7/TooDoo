@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-root "static_pages#top"
+root "todos#index"
 resources :todos
 end
