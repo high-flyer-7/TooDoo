@@ -94,15 +94,15 @@ production:
     # username: myapp
     # password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
   cache:
-    <<: *default
+    <<: *primary_production
     url: <%= ENV["CACHE_DATABASE_URL"] %>
     migrations_paths: db/cache_migrate
   queue:
-    <<: *default
+    <<: *primary_production
     url: <%= ENV["QUEUE_DATABASE_URL"] %>
     migrations_paths: db/queue_migrate
   cable:
-    <<: *default
+    <<: *primary_production
     url: <%= ENV["CABLE_DATABASE_URL"] %>
     migrations_paths: db/cable_migrate
 # production:
